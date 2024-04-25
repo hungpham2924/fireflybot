@@ -2,7 +2,17 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 const config = require('./config.json');
+const express = require('express');
 client.config = config;
+const app = express();
+const port = 3000;
+app.get('/', (req, res) => {
+  res.send('YaY Your Bot Status Changed✨');
+});
+app.listen(port, () => {
+  console.log(`🔗 Listening to RTX: http://localhost:${port}`);
+  console.log(`🔗 Powered By RTX`);
+});
 
 // Init discord giveaways
 const { GiveawaysManager } = require('discord-giveaways');
