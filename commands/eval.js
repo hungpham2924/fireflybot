@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
     if(!message.content.startsWith(prefix)) return;
   
   if (message.author.id !== "603948445362946084") {
-    return message.channel.send("<:zen_wrong:952131605080727552> Forbidden: This Command is Owner-Only!")
+    return message.channel.send(":x: Forbidden: This Command is Owner-Only!")
   }
   
   if (!args[0]) {

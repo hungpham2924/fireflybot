@@ -1,10 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
 const fs = require('fs');
 const config = require('./config.json');
-const keep_alive = require('./keep_alive.js')
-require('dotenv').config()
 client.config = config;
 
 // Init discord giveaways
@@ -45,10 +42,4 @@ fs.readdir("./commands/", (_err, files) => {
 });
 
 // Login through the client
-client.login(process.env.token);
-
-const keepAlive = require("./server");
-
-
-
-keepAlive();
+client.login(config.token);
